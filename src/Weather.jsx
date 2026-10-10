@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 function getWeatherImage(temperatureC) {
   const roundedC = Math.round(temperatureC);
 
+  
+
   if (roundedC <= 10) {
     return {
       src: "/cold.png",
@@ -100,6 +102,15 @@ export default function Weather({ latitude, longitude }) {
       : Math.round(temperatureC * 9 / 5 + 32);
 
   const image = getWeatherImage(temperatureC);
+  const roundedC = Math.round(temperatureC);
+
+  let weatherClass = "warm";
+
+  if (roundedC <= 10) {
+    weatherClass = "cold";
+  } else if (roundedC < 20) {
+    weatherClass = "mild";
+  }
 
   function toggleUnit() {
     setUnit((previousUnit) => (
@@ -108,7 +119,7 @@ export default function Weather({ latitude, longitude }) {
   }
 
   return (
-    <section className="weather" aria-labelledby="weather-title">
+    <section className={`weather ${weatherClass}`} aria-labelledby="weather-title">
       <h3 id="weather-title">Current temperature</h3>
 
       <img
@@ -121,9 +132,11 @@ export default function Weather({ latitude, longitude }) {
         {displayedTemperature} °{unit}
       </p>
 
-      <button type="button" onClick={toggleUnit}>
-        {unit === "C" ? "Change to °F" : "Change to °C"}
-      </button>
+      <div className="weather-buttons">
+        <button type="button" onClick={toggleUnit}>
+          {unit === "C" ? "Change to °F" : "Change to °C"}
+        </button>
+      </div>
 
       <p>
         Weather data from{" "}

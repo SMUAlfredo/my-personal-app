@@ -53,7 +53,7 @@ export default function App() {
   return (
     <div className="App">
       <header>
-        <h1>Welcome to my personal app</h1>
+        
         <nav aria-label="Main navigation">
           <button 
           type="button"
