@@ -14,7 +14,7 @@ function AboutMe(){
     <section className="myself">
 
       <h2>Hello, Im Alfredo</h2>
-      <img src="/myself" alt="Alfredo photo" className="profile-photo" />
+      <img src="/myself.png" alt="Alfredo photo" className="profile-photo" />
       
       <p className="intro">
           I'm a computer science engineer currently living in Dartmouth, Nova Scotia, and pursuing a master's degree in Computing and Data Analytics.      
@@ -31,14 +31,17 @@ function MyTown(){
       <h2>
         Guadalajara
       </h2>
-      <img src="/guadalajara" alt="Guadalajara Photo" className="city-photo" />
+      <img src="/guadalajara.jpg" alt="Guadalajara Photo" className="city-photo" />
 
 
     <p>My Hometown is {TOWN.name}.</p>
 
     <p>{TOWN.name} is the city where I was born, and I spent my first 22 years living there. It is a beautiful city with amazing gastronomy and charming culture; the weather is normally warm and sunny.</p>
 
-
+    <Weather
+        latitude={20.6597}
+        longitude={-103.3496}
+      />
 
   </section>
   );
