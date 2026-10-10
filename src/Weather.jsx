@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-// Selecciona la imagen usando Celsius redondeados.
+
 function getWeatherImage(temperatureC) {
   const roundedC = Math.round(temperatureC);
 
