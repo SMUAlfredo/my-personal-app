@@ -5,14 +5,14 @@ body{
 }
 
 header{
-  background-color: #181010;
+  background-color: #000000;
   color: #ffffff;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
 }
 main{
-  background-color: #181010;
+  background-color: #000000;
   color: #ffffff;
   padding: 20px;
   border-radius: 10px;
@@ -20,7 +20,7 @@ main{
 } 
 
 footer{
-  background-color: #181010;
+  background-color: #000000;
   color: #ffffff;
   text-align: center;
   padding: 20px;
@@ -32,8 +32,13 @@ h2{
   text-align: center;
   font-size: 24px;
   margin-bottom: 10px;
+  padding: 30px;
 }
 
+.myself:hover{
+color: #02610a;
+
+}
 p{
   color: #ffffff;
   text-align: center;
@@ -41,36 +46,91 @@ p{
   margin-bottom: 10px;
 }
 
-.profile-photo{
-  display: block;
-  margin: 0 auto;
-  width: 400px;
-  height: 500px;
-  border-radius: 25px;
+
+.myself {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.profile-photo {
+  width: 40%;
+  height: auto;
+  border-radius: 15px;
+}
+
+.presentation {
+  flex: 1;
+  min-width: 0;
+  height: auto;
+  box-sizing: border-box;
   padding: 20px;
+  border-radius: 15px;
+  background-color: #102310;
+}
+
+.presentation h2 {
+  margin-top: 0;
+}
+
+.intro {
+  margin: 0;
+  color: white;
+  line-height: 1.6;
+}
+.intro:hover{
+  background-color: #000e01;
+  color: #02610a;
+}
+@media (max-width: 650px) {
+  .myself {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-photo {
+    width: 80%;
+  }
+
+  .presentation {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}
+
+.town-info {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 40px auto;
 }
 
 .city-photo{
-  display: block;
-  margin: 0 auto;
-  width: 800px;
-  height: 600px;
-  border-radius: 25px;
-  padding: 20px;
+  width: 60%;
+  height: auto;
+  border-radius: 15px;
 }
 
 button{
-  background-color: #181010;
+  background-color: #000000;
   color: #ffffff;
   border: none;
-  padding: 10px 20px;
+  padding: 30px 30px;
   border-radius: 5px;
   cursor: pointer;
 }
 
 button:hover{
-  background-color: #333333;
+  background-color: #000e07;
+  color: #02610a;
 }
+
+
 
 .weather{
   display: block;
@@ -79,24 +139,6 @@ button:hover{
   border-radius: 25px;
   padding: 20px;
 
-}
-
-.weather.cold{
-  background-color: #15678d;
-}
-
-.weather.mild{
-  background-color: #011631;
-}
-
-.weather.warm{
-  background-color: #7a4006;
-}
-
-#weather-title{
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 10px;
 }
 
 .weather-image{
@@ -118,5 +160,26 @@ button:hover{
   display: block;
   width: fit-content;
   margin: 10px auto;
+  background-color: #000000;
   
 }
+
+
+.weather.cold{
+  background-color: #15678d;
+}
+
+.weather.mild{
+  background-color: #011631;
+}
+
+.weather.warm{
+  background-color: #7a4006;
+}
+
+#weather-title{
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
