@@ -29,16 +29,15 @@ footer{
 }
 h2{
   color: #ffffff;
-  text-align: center;
+  text-align: justify;
   font-size: 24px;
   margin-bottom: 10px;
   padding: 30px;
 }
 
-.myself:hover{
-color: #02610a;
 
-}
+
+
 p{
   color: #ffffff;
   text-align: center;
@@ -50,7 +49,7 @@ p{
 .myself {
   display: flex;
   align-items: stretch;
-  justify-content: center;
+  justify-content: justify;
   gap: 30px;
   max-width: 1000px;
   margin: 40px auto;
@@ -82,9 +81,17 @@ p{
   line-height: 1.6;
 }
 .intro:hover{
-  background-color: #000e01;
   color: #02610a;
 }
+
+.hobbies li{
+  color: white;
+}
+
+li:hover{
+  color: #02610a;
+}
+
 @media (max-width: 650px) {
   .myself {
     flex-direction: column;
@@ -101,20 +108,55 @@ p{
   }
 }
 
-.town-info {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  gap: 30px;
+.town {
+  width: 90%;
   max-width: 1000px;
   margin: 40px auto;
 }
 
-.city-photo{
+.town-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.town-info .city-photo {
   width: 60%;
   height: auto;
+  margin: 0;
+  padding: 0;
   border-radius: 15px;
 }
+
+.town-description p{
+  text-align: justify;
+
+}
+.town-description h2{
+  text-align: justify;
+}
+.town-description {
+  flex: 1;
+  min-width: 0;
+  
+  
+}
+
+.activities h3{
+  text-align: justify;
+}
+
+.town-description ul{
+  text-align: justify;
+}
+
+
+.town > .weather {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 40px 0 0;
+}
+
 
 button{
   background-color: #000000;
@@ -160,10 +202,13 @@ button:hover{
   display: block;
   width: fit-content;
   margin: 10px auto;
-  background-color: #000000;
+  background-color: rgb(255 255 255 / 10%);
+  color: white;
   
 }
-
+.weather-buttons button:hover {
+  background-color: rgb(255 255 255 / 20%);
+}
 
 .weather.cold{
   background-color: #15678d;

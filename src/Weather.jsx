@@ -26,7 +26,7 @@ function getWeatherImage(temperatureC) {
   };
 }
 
-export default function Weather({ latitude, longitude }) {
+export default function Weather() {
   const [temperatureC, setTemperatureC] = useState(null);
   const [unit, setUnit] = useState("C");
   const [loading, setLoading] = useState(true);
@@ -40,19 +40,7 @@ export default function Weather({ latitude, longitude }) {
       setError("");
 
       try {
-        const apiKey = import.meta.env.VITE_WEATHER_API_KEY;
-
-        if (!apiKey) {
-          throw new Error("Missing weather API key.");
-        }
-
-        const url =
-          "https://api.openweathermap.org/data/2.5/weather" +
-          `?lat=${latitude}&lon=${longitude}` +
-          `&appid=${encodeURIComponent(apiKey)}` +
-          "&units=metric";
-
-        const response = await fetch(url, {
+        const response = await fetch("/.netlify/functions/weather", {
           signal: controller.signal,
         });
 
@@ -63,7 +51,7 @@ export default function Weather({ latitude, longitude }) {
         }
 
         const data = await response.json();
-        const temperature = data.main?.temp;
+        const temperature = data.temperatureC;
 
         if (!Number.isFinite(temperature)) {
           throw new Error("Invalid temperature received.");
@@ -86,7 +74,7 @@ export default function Weather({ latitude, longitude }) {
     loadWeather();
 
     return () => controller.abort();
-  }, [latitude, longitude]);
+  }, []);
 
   if (loading) {
     return <p role="status">Loading weather...</p>;
@@ -134,7 +122,7 @@ export default function Weather({ latitude, longitude }) {
 
       <div className="weather-buttons">
         <button type="button" onClick={toggleUnit}>
-          {unit === "C" ? "Change to °F" : "Change to °C"}
+          {unit === "C" ? "°F" : " °C"}
         </button>
       </div>
 
