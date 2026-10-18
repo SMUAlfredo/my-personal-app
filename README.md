@@ -1,5 +1,7 @@
 # About Me & My Town
 
+**Live website:** [https://alfredochidoapp.netlify.app/](https://alfredochidoapp.netlify.app/)
+
 An academic project built with React and JavaScript. It includes a personal introduction and a view about Guadalajara, Jalisco, Mexico, my hometown.
 
 ## Features
